@@ -3,7 +3,7 @@ const path = require('path');
 
 const args = process.argv.slice(2);
 const [sourceFile, destination] = args;
-let destinationPath;
+let destinationPath = '';
 
 if (fs.existsSync(destination) && fs.lstatSync(destination).isDirectory()) {
   destinationPath = path.join(destination, `\\${path.basename(sourceFile)}`);
